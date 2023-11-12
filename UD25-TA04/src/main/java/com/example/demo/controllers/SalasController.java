@@ -20,14 +20,14 @@ import com.example.demo.services.SalasServiceImpl;
 public class SalasController {
 	@Autowired
 	SalasServiceImpl salasServiceImpl;
-	@GetMapping("/articulos")
-	public List<Salas> listarSalas(){
+	@GetMapping("/salas")
+	public List<Salas> listarSalas(){	
 		return salasServiceImpl.listarSalas();
 	}
 	
-	@PostMapping("/articulos")
-	public Salas salvarSalas(@RequestBody Salas articulos) {
-		return salasServiceImpl.guardarSalas(articulos);
+	@PostMapping("/salas")
+	public Salas salvarSalas(@RequestBody Salas salas) {
+		return salasServiceImpl.guardarSalas(salas);
 	}
 	@GetMapping("/salas/{id}")
 	public Salas salasXID(@PathVariable(name="id")Long id) {
